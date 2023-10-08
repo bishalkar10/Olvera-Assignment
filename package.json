@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "homepage": "https://bishalkar10.github.io/Olvera-Assignment/",
   "scripts": {
     "watch-css": "node-sass --watch src/styles -o dist/"
   },
