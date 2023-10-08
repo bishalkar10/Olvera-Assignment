@@ -31,6 +31,19 @@
       justify-content: space-between;
       margin-right: 40px;
       @media (max-width: $breakpoint2) {
+        display: none;
+      }
+      & > .nav-link {
+        a {
+          @include font-styles($Montnates, 16px, 800, 24px, $NAV-LINK-COLOR);
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      }
+    }
+    & > .side-nav-links {
+      display: none;
+      @media (max-width: $breakpoint2) {
         position: absolute;
         flex-direction: column;
         top: 80px;
@@ -46,23 +59,19 @@
           @include center-item;
           a {
             // display: block;
+            @include font-styles($Montnates, 16px, 800, 24px, $NAV-LINK-COLOR);
+            text-decoration: none;
+            text-transform: uppercase;
             color: $NAV-LINK-COLOR;
             border-top: 2px solid black;
             width: 100%;
             padding: 10px 0;
             text-align: center;
           }
-          & :hover {
+          &:hover {
             background-color: $PRIMARY-COLOR;
             color: white;
           }
-        }
-      }
-      & > .nav-link {
-        a {
-          @include font-styles($Montnates, 16px, 800, 24px, $NAV-LINK-COLOR);
-          text-decoration: none;
-          text-transform: uppercase;
         }
       }
     }
@@ -120,9 +129,12 @@
           width: 15px;
         }
       }
-    }
-    & :active {
-      background-color: $PRIMARY-COLOR;
+      &:active {
+        background-color: $PRIMARY-COLOR;
+        & > .bar {
+          background-color: white;
+        }
+      }
     }
   }
 }
