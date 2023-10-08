@@ -4,7 +4,7 @@ const scrollRightButton = document.getElementById("scrollRightButton");
 const reviewsContainer = document.querySelector(".reviews");
 const reviewCards = reviewsContainer.querySelectorAll(".card"); // Replace ".card" with the actual class name of your review cards
 const menuButton = document.querySelector(".bars");
-const navBar = document.querySelector(".nav-link-list");
+const navBar = document.querySelector(".side-nav-links");
 let open = false;
 
 menuButton.addEventListener("click", () => {
@@ -22,10 +22,6 @@ menuButton.addEventListener("click", () => {
 
 window.addEventListener("resize", () => {
   if (window.innerWidth > 768) {
-    navBar.style.display = "flex";
-    return;
-  }
-  if (window.innerWidth < 768) {
     navBar.style.display = "none";
     return;
   }
