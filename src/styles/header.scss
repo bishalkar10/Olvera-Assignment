@@ -1,0 +1,128 @@
+@import "mixins";
+@import "variables";
+
+.header {
+  & > .nav {
+    height: 112px;
+    width: 100%;
+    padding: 0 80px;
+    position: relative;
+    @include center-item;
+    @media (max-width: $breakpoint3) {
+      padding: 0 40px;
+    }
+    @media (max-width: $breakpoint2) {
+      justify-content: flex-start;
+      height: 80px;
+    }
+    & > .logo-img {
+      width: 142px;
+      height: 33px;
+      margin-right: 50px;
+      @media (max-width: $breakpoint2) {
+        margin-right: auto;
+      }
+    }
+    & > .nav-link-list {
+      list-style: none;
+      display: flex;
+      flex-grow: 1;
+      gap: 10px;
+      justify-content: space-between;
+      margin-right: 40px;
+      @media (max-width: $breakpoint2) {
+        position: absolute;
+        flex-direction: column;
+        top: 80px;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: white;
+        // align-items: center;
+        gap: 0;
+
+        & > .nav-link {
+          width: 100%;
+          @include center-item;
+          a {
+            // display: block;
+            color: $NAV-LINK-COLOR;
+            border-top: 2px solid black;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+          }
+          & :hover {
+            background-color: $PRIMARY-COLOR;
+            color: white;
+          }
+        }
+      }
+      & > .nav-link {
+        a {
+          @include font-styles($Montnates, 16px, 800, 24px, $NAV-LINK-COLOR);
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      }
+    }
+    & > .contact-btn {
+      width: 110px;
+      height: 45px;
+      @include center-item;
+      border-radius: 30px;
+      gap: 10px;
+      background-color: $PRIMARY-COLOR;
+      @include font-styles($Oswald, 14px, 600, 24px, white);
+      letter-spacing: 0.06em;
+      margin-right: 25px;
+      @media (max-width: $breakpoint2) {
+        display: none;
+      }
+    }
+    & > .icon-list {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      @media (max-width: $breakpoint2) {
+        display: none;
+      }
+      & > li .icon {
+        height: 20px;
+        width: 20px;
+        color: $SOCIAL-ICON-COLOR;
+      }
+    }
+    & > .icon {
+      display: none;
+      @media (max-width: $breakpoint2) {
+        display: inline-block;
+        font-size: 25px;
+        margin-right: 20px;
+      }
+    }
+    & > .bars {
+      display: none;
+      @media (max-width: $breakpoint2) {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 3px;
+        padding: 10px;
+        border-radius: 10px;
+        & > .bar {
+          height: 4px;
+          border-radius: 4px;
+          background-color: black;
+          width: 25px;
+        }
+        & > .bar:nth-child(odd) {
+          width: 15px;
+        }
+      }
+    }
+    & :active {
+      background-color: $PRIMARY-COLOR;
+    }
+  }
+}

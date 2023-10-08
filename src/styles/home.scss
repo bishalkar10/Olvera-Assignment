@@ -1,0 +1,66 @@
+@import "mixins";
+@import "variables";
+
+#home {
+  height: 706px;
+  width: 100%;
+  background-image: url("/public/hero-image.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  .outer-div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.0001) 0%,
+      rgba(18, 27, 33, 0.9) 100%
+    );
+    .text-div {
+      width: max-content;
+      height: 188px;
+      margin-left: 134px;
+      position: relative;
+      .text {
+        @include font-styles($Montserrat, 72px, 600, 94px, white);
+        color: white;
+
+        span {
+          font-weight: 700;
+        }
+      }
+      .contact-btn {
+        position: absolute;
+        bottom: -100px;
+        padding: 15px 40px;
+        background-color: #f837b7;
+        border-radius: 1000px;
+        @include font-styles($Plus-Jakarta-Sans, 16px, 600, 24px, black);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint) {
+  #home {
+    height: 522px;
+    .outer-div {
+      align-items: flex-end;
+      justify-content: center;
+      .text-div {
+        margin: 0;
+        .text {
+          @include font-styles($Montserrat, 42px, 600, 62px, white);
+        }
+        .contact-btn {
+          display: none;
+        }
+      }
+    }
+  }
+}

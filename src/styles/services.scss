@@ -1,0 +1,150 @@
+@import "mixins";
+@import "variables";
+
+#services {
+  width: 100%;
+  padding: 30px 80px 120px 80px;
+  position: relative;
+  overflow: hidden;
+  .former-circle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+  }
+  .stats {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $breakpoint2) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+    & > div {
+      @include font-styles($Montnates, 62px, 800, 76px, #cc0e8c);
+      display: flex;
+      flex-direction: column;
+
+      span {
+        @include font-styles($Montserrat, 20px, 600, 24px, #292929);
+      }
+    }
+  }
+  .boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    margin-top: 150px;
+    .left {
+      position: relative;
+      h4 {
+        @include font-styles($Oswald, 22px, 600, 24px, $PRIMARY-COLOR);
+        letter-spacing: 0.06em;
+        margin-bottom: 15px;
+      }
+      p {
+        @include font-styles($Plus-Jakarta-Sans, 45px, 800, 59px, #2d2d2d);
+        font-family: Plus Jakarta Sans;
+        margin-bottom: 30px;
+      }
+      & .description {
+        @include font-styles($Archivo, 17px, 400, 26px, #2d2d2d);
+      }
+      & .circle {
+        position: absolute;
+        top: -80px;
+        right: -45px;
+      }
+    }
+    .right {
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        li {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .container {
+            margin-bottom: 10px;
+            .number {
+              @include font-styles($Montnates, 16px, 600, 59px, $PRIMARY-COLOR);
+            }
+            .div1 {
+              display: flex;
+              justify-content: space-between;
+
+              .title {
+                @include font-styles($Montnates, 24px, 800, 29px, #2d2d2d);
+              }
+              .arrow-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+          .line {
+            display: flex;
+            width: 100%;
+            align-items: baseline;
+          }
+          .left-line {
+            width: 32px;
+            height: 2px;
+            background-color: #000; /* Adjust the color as needed */
+          }
+          .right-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #bcbcbc; /* Adjust the color as needed */
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint) {
+  #services {
+    padding: 30px 42px 80px 42px;
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      text-align: center;
+
+      & > div {
+        font-size: 47px;
+      }
+    }
+    .boxes {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 80px;
+      .left {
+        h4 {
+          display: none;
+        }
+        & p {
+          font-size: 26px;
+          text-align: center;
+          line-height: normal;
+        }
+        & .description {
+          font-size: 15px;
+          color: #6e6e6e;
+        }
+        & .circle {
+          display: none;
+        }
+      }
+    }
+    .former-circle {
+      display: none;
+    }
+  }
+}

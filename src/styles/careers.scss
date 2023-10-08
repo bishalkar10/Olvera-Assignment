@@ -1,0 +1,88 @@
+@import "mixins";
+@import "variables";
+
+#careers {
+  padding: 40px 0 40px 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  overflow: hidden;
+  @media (max-width: $breakpoint) {
+    padding: 60px 50px;
+    flex-direction: column-reverse;
+  }
+  .former-circle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+    @media (max-width: $breakpoint) {
+      display: none;
+    }
+  }
+  & .left {
+    position: relative;
+    flex-basis: 50%;
+    @media (max-width: $breakpoint) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    & h4 {
+      @include font-styles($Oswald, 22px, 600, 24px, $PRIMARY-COLOR);
+      letter-spacing: 0.06em;
+      margin-bottom: 15px;
+      @media (max-width: $breakpoint) {
+        text-align: center;
+        @include font-styles($Oswald, 14px, 600, 24px, $PRIMARY-COLOR);
+        letter-spacing: 0.84px;
+        text-transform: uppercase;
+      }
+    }
+    & p {
+      @include font-styles($Plus-Jakarta-Sans, 45px, 800, 59px, #2d2d2d);
+      margin-bottom: 30px;
+      @media (max-width: $breakpoint) {
+        text-align: center;
+        @include font-styles($Plus-Jakarta-Sans, 28px, 600, 110%, #2d2d2d);
+      }
+    }
+    & .description {
+      @include font-styles($Archivo, 17px, 400, 26px, #2d2d2d);
+      @media (max-width: $breakpoint) {
+        text-align: center;
+        @include font-styles($Plus-Jakarta-Sans, 20px, 400, 170%, #6e6e6e);
+      }
+    }
+    & .circle {
+      position: absolute;
+      top: -20px;
+      right: -45px;
+      @media (max-width: $breakpoint) {
+        transform: rotate(180deg);
+        top: -20px;
+        left: -80px;
+        width: 320px;
+        height: 320px;
+      }
+    }
+    & .search-btn {
+      @include center-item;
+      @include font-styles($Plus-Jakarta-Sans, 16px, 600, 24px, black);
+      background-color: #ff74d0;
+      width: 173px;
+      height: 54px;
+      border-radius: 1000px;
+    }
+  }
+  & .right {
+    img {
+      width: 100%;
+      aspect-ratio: 697/752;
+    }
+  }
+}

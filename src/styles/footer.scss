@@ -1,0 +1,197 @@
+@import "mixins";
+@import "variables";
+
+footer {
+  width: 100%;
+  background: #000;
+  & > .top {
+    padding: 80px 100px 80px 100px;
+    & > p:first-child {
+      @include font-styles($Montserrat, 64px, 600, 70px, white);
+      text-align: center;
+    }
+    & > p {
+      @include font-styles($Plus-Jakarta-Sans, 20px, 400, 26px, #e0e0e0);
+      margin-top: 50px;
+      text-align: center;
+    }
+    & > .btn {
+      @include font-styles($Plus-Jakarta-Sans, 18px, 600, 24px, #1c1c1c);
+      text-align: center;
+      width: max-content;
+      border-radius: 1000px;
+      background: #c2278e;
+      padding: 15px 40px;
+      margin: 50px auto;
+    }
+    & > .flex {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+
+      & > .image-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        height: max-content;
+        gap: 24px;
+        margin-right: 80px;
+        @media screen and (max-width: $breakpoint3) {
+          margin-right: 0;
+        }
+        & > .hide-big-screen {
+          display: none;
+        }
+        & > p {
+          @include font-styles($Plus-Jakarta-Sans, 16px, 400, 24px, #e0e0e0);
+          white-space: nowrap;
+        }
+      }
+      & > .links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 80px;
+        & > h6 {
+          @include font-styles($Plus-Jakarta-Sans, 18px, 600, 24px, white);
+          margin-bottom: 4px;
+        }
+        & > p {
+          @include font-styles($Plus-Jakarta-Sans, 12px, 400, 24px, #e0e0e0);
+        }
+      }
+      & > .address {
+        width: 155px;
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 16px;
+        & > p {
+          @include font-styles($Montserrat, 10px, 400, normal, #fff);
+        }
+        & > p:first-child {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  & > .footer-bottom {
+    background-color: #000;
+    padding: 32px 0;
+    color: white;
+    border-top: 1px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    & > p {
+      @include font-styles($Plus-Jakarta-Sans, 14px, 400, normal, #e0e0e0);
+    }
+    & > .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      & li .icon {
+        color: white;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint) {
+  footer {
+    & > .top {
+      padding: 40px 30px;
+      & > p:first-child {
+        @include font-styles($Montserrat, 19px, 600, 100%, white);
+      }
+      & > p {
+        @include font-styles($Plus-Jakarta-Sans, 11px, 400, normal, #e0e0e0);
+      }
+      & > .btn {
+        font-family: Plus Jakarta Sans;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: center;
+      }
+      & > .flex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+        & > .image-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          width: max-content;
+          gap: 50px;
+          margin-right: 0;
+          margin: 0 20px;
+          & > p {
+            @include font-styles($Plus-Jakarta-Sans, 16px, 400, 24px, #e0e0e0);
+            margin-top: 130px;
+            text-align: center;
+            grid-column: 1 / span 2;
+          }
+          & > .hide-big-screen {
+            display: block;
+          }
+          & > .hide-small-screen {
+            display: none;
+          }
+        }
+        & > .links {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          margin-top: 39px;
+          & > h6 {
+            @include font-styles($Plus-Jakarta-Sans, 27px, 600, 135%, white);
+            margin-bottom: 12px;
+            text-align: center;
+          }
+          & > p {
+            @include font-styles($Plus-Jakarta-Sans, 23px, 400, 150%, #e0e0e0);
+            text-align: center;
+          }
+        }
+        & > .address {
+          width: 155px;
+          margin-top: 66px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 16px;
+          & > p:first-child {
+            @include font-styles($Montserrat, 12px, 400, normal, #fff);
+          }
+          & > p {
+            text-align: center;
+          }
+        }
+      }
+    }
+    & > .footer-bottom {
+      flex-direction: column;
+      gap: 14px;
+      & > p {
+        @include font-styles($Plus-Jakarta-Sans, 12px, 400, normal, #e0e0e0);
+      }
+      & > .footer-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        & li .icon {
+          color: white;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

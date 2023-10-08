@@ -1,0 +1,135 @@
+@import "mixins";
+@import "variables";
+
+#review {
+  & > .title {
+    @include font-styles($Plus-Jakarta-Sans, 45px, 700, 42px, #000);
+    text-align: center;
+    margin: 100px auto;
+    padding: 0 100px 0 100px;
+    @media (max-width: $breakpoint) {
+      @include font-styles($Plus-Jakarta-Sans, 28px, 700, 42px, #000);
+      margin: 40px auto;
+    }
+  }
+  & > .reviews-container {
+    position: relative;
+    & > .arrow-btn {
+      height: 60px;
+      width: 60px;
+      background-color: transparent;
+      @include center-item;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      border-radius: 8px;
+      &:active {
+        background-color: #bfc7d1;
+      }
+      & > .icon {
+        color: #42597a;
+        font-size: 38px;
+      }
+    }
+
+    & > #scrollLeftButton {
+      left: 30px;
+    }
+    & > #scrollRightButton {
+      right: 30px;
+    }
+    & > .reviews {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      padding: 0 20px 40px 120px;
+      overflow-x: scroll;
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      & {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      & > .card {
+        width: 381px;
+        height: 357px;
+        padding: 38px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background-color: #c2278e08;
+
+        & > .quote {
+          @include font-styles($Heebo, 20px, 400, 30px, #5e84a1);
+
+          & > .quote-text > span {
+            margin-left: 70px;
+          }
+        }
+
+        & > .card-info {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 15px;
+          & > .avtar {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background-color: $PRIMARY-COLOR;
+            @include center-item;
+            & > .icon {
+              color: white;
+              font-size: 22.5px;
+              transform: rotateY(180deg);
+            }
+          }
+          & > .info {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            & > .name {
+              @include font-styles($Poppins, 18px, 700, 25px, #1e5068);
+            }
+            & > .date {
+              @include font-styles($Poppins, 14px, 400, 20px, #5e84a1);
+            }
+          }
+        }
+      }
+      & > .card.active {
+        @extend .card;
+        background-color: #c2278e;
+
+        & > .quote {
+          color: #fff;
+        }
+        & > .card-info {
+          & > .avtar {
+            background-color: white;
+
+            & > .icon {
+              color: $PRIMARY-COLOR;
+            }
+          }
+          & > .info {
+            & > .name {
+              color: white;
+            }
+            & > .date {
+              color: #c5e9fb;
+            }
+          }
+        }
+      }
+    }
+  }
+}

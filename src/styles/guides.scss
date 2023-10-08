@@ -1,0 +1,85 @@
+@import "mixins";
+@import "variables";
+
+#guides {
+  width: 100%;
+  background-image: url("/public/Olevera_Guides.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+
+  & > .container {
+    width: 100%;
+    padding: 119px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0) 0.95%,
+      rgba(0, 0, 0, 0.96) 101.07%
+    );
+    @media (max-width: $breakpoint) {
+      padding: 50px;
+      align-items: center;
+    }
+    & p {
+      @include font-styles($Plus-Jakarta-Sans, 30px, 400, 72px, white);
+      @media (max-width: $breakpoint) {
+        @include font-styles(Oswald, 14px, 600, 24px, $PRIMARY-COLOR);
+        text-align: center;
+        letter-spacing: 0.84px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+    }
+    & p:nth-child(2) {
+      display: none;
+
+      @media (max-width: $breakpoint) {
+        display: block;
+        @include font-styles($Montserrat, 23px, 600, 110%, white);
+        text-transform: capitalize;
+        margin-bottom: 20px;
+      }
+    }
+    & p:nth-child(3) {
+      display: none;
+      @media (max-width: $breakpoint) {
+        display: block;
+        @include font-styles($Plus-Jakarta-Sans, 32px, 800, normal, white);
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+      }
+    }
+    & .view-more {
+      @include font-styles($Montserrat, -21px, -400, 26px, white);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      margin: 30px 10px 100px 0;
+      @media (max-width: $breakpoint) {
+        margin: 0;
+        order: 1;
+      }
+      .arrow-icon {
+        @include center-item;
+        width: 117px;
+        height: 117px;
+        border: 1px solid white;
+        border-radius: 50%;
+      }
+    }
+    & .content {
+      width: 590px;
+      @include font-styles($Archivo, 17px, 400, 26px, white);
+      @media (max-width: $breakpoint) {
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+    }
+  }
+}

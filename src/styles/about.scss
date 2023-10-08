@@ -1,0 +1,73 @@
+@import "mixins";
+@import "variables";
+
+#about {
+  width: 100%;
+  background-color: $PRIMARY-COLOR;
+  padding: 125px 30px;
+  background-image: url("/public/Vector 48.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+  @media (max-width: $breakpoint) {
+    padding: 30px;
+  }
+  & > p {
+    margin-left: 100px;
+    @include font-styles($Plus-Jakarta-Sans, 30px, 400, 72px, white);
+    text-transform: capitalize;
+    @media (max-width: $breakpoint) {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  & > p:nth-child(2) {
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    @include font-styles($Plus-Jakarta-Sans, 39px, 800, 52px, white);
+    display: none;
+    @media (max-width: $breakpoint) {
+      display: block;
+    }
+  }
+  & > .description {
+    width: 408px;
+    @include font-styles($Archivo, 18px, 400, 30px, white);
+    margin: 40px 70px 0 auto;
+    @media (max-width: $breakpoint) {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+  & > .brands {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    @media (max-width: $breakpoint) {
+      gap: 25px;
+      justify-content: center;
+
+      & > img:nth-child(1) {
+        width: 96px;
+        height: auto;
+      }
+      & > img:nth-child(2) {
+        width: 203px;
+        height: auto;
+      }
+      & > img:nth-child(3) {
+        width: 123px;
+        height: auto;
+      }
+      & > img:nth-child(4) {
+        width: 219px;
+        height: auto;
+      }
+    }
+  }
+}
