@@ -39,28 +39,7 @@ html,
     margin-right: 40px; }
     @media (max-width: 768px) {
       .header > .nav > .nav-link-list {
-        position: absolute;
-        flex-direction: column;
-        top: 80px;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        background-color: white;
-        gap: 0; }
-        .header > .nav > .nav-link-list > .nav-link {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center; }
-          .header > .nav > .nav-link-list > .nav-link a {
-            color: #292929bf;
-            border-top: 2px solid black;
-            width: 100%;
-            padding: 10px 0;
-            text-align: center; }
-          .header > .nav > .nav-link-list > .nav-link :hover {
-            background-color: #c2278e;
-            color: white; } }
+        display: none; } }
     .header > .nav > .nav-link-list > .nav-link a {
       font-family: "Montserrat Alternates", sans-serif;
       font-size: 16px;
@@ -69,6 +48,39 @@ html,
       color: #292929bf;
       text-decoration: none;
       text-transform: uppercase; }
+  .header > .nav > .side-nav-links {
+    display: none; }
+    @media (max-width: 768px) {
+      .header > .nav > .side-nav-links {
+        position: absolute;
+        flex-direction: column;
+        top: 80px;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: white;
+        gap: 0; }
+        .header > .nav > .side-nav-links > .nav-link {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .header > .nav > .side-nav-links > .nav-link a {
+            font-family: "Montserrat Alternates", sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 24px;
+            color: #292929bf;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #292929bf;
+            border-top: 2px solid black;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center; }
+          .header > .nav > .side-nav-links > .nav-link:hover {
+            background-color: #c2278e;
+            color: white; } }
   .header > .nav > .contact-btn {
     width: 110px;
     height: 45px;
@@ -123,8 +135,10 @@ html,
           width: 25px; }
         .header > .nav > .bars > .bar:nth-child(odd) {
           width: 15px; } }
-  .header > .nav :active {
-    background-color: #c2278e; }
+    .header > .nav > .bars:active {
+      background-color: #c2278e; }
+      .header > .nav > .bars:active > .bar {
+        background-color: white; }
 
 #home {
   height: 706px;
