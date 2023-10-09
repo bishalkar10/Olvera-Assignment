@@ -246,6 +246,7 @@ html,
     margin: 40px 70px 0 auto; }
     @media (max-width: 640px) {
       #about > .description {
+        width: 100%;
         text-align: center;
         margin: 0 auto; } }
   #about > .brands {
@@ -257,7 +258,7 @@ html,
     gap: 80px; }
     @media (max-width: 640px) {
       #about > .brands {
-        gap: 25px;
+        gap: 15px;
         justify-content: center; }
         #about > .brands > img:nth-child(1) {
           width: 96px;
